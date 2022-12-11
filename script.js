@@ -26,9 +26,10 @@ document.querySelector(".menuMobileMob").addEventListener("click", function(){
 })
 
 
+//variaveis usadas
 
-//aqui adiciona um conteudo
 let itemDaVez = 0
+let slotvazio = document.querySelector('.slotvazio')
 let itemDaVezDisplay = 0
 let widget = document.querySelectorAll('.widget_item')
 let widgetQtd = 12
@@ -36,11 +37,13 @@ let mostrarItem = (widget)
 let qtdeItensTela = document.querySelector('.botao.qtd')
 let conteudoEditCoress = document.getElementsByClassName('conteudo_titulo_cores')
 
+//aqui adiciona um conteudo
 document.querySelector(".botao.add").addEventListener("click", function(){
     if( itemDaVezDisplay >= widgetQtd ){
         alert("Você atingiu o lime máximo de anotações :(")
     }else{
         qtdeItensTela.innerHTML = (`<h4>${itemDaVezDisplay + 1}</h4>`)
+        slotvazio.classList.add('none')
         mostrarItem[itemDaVez].classList.toggle('none')
         return (itemDaVez = (itemDaVez + 1), itemDaVezDisplay = (itemDaVezDisplay + 1))
 
@@ -57,7 +60,16 @@ for ( let x = 0 ; x < delQtd; x++ ){
 
     del[x].addEventListener('click', function(){
             let widgets= document.getElementsByClassName('widget_item')
-            console.log(widgets)
+            console.log(itemDaVezDisplay)
+            while(itemDaVezDisplay <= 1){
+                console.log('validou é igual a 0')
+                slotvazio.classList.remove('none')
+                break;
+            }
+            
+            if(itemDaVezDisplay === 0){
+
+            }
             widgets[x].classList.add('none')
             widgets[x].classList.add('removed')
             qtdeItensTela.innerHTML = (`<h4>${itemDaVezDisplay - 1}</h4>`)
