@@ -465,7 +465,9 @@ main.open{
 .slotvazio h1, .slotvazio p, .slotvazio path{
     color:var(--dark4)
 }
-
+.slotvazio svg{
+    rotate: y 180deg;
+}
 @media (max-width:950px){
    .widget_item{
     max-width: calc(50% - 30px);;
@@ -528,6 +530,9 @@ main.open{
     .space1{
         margin: 0px;
         padding: 0px;
+    }
+    .slotvazio svg{
+        rotate: y 0deg;
     }
 
  }
