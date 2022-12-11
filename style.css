@@ -442,7 +442,7 @@ main.open{
     margin-top: 5px;
     margin-bottom: 15px;
 }
-..conteudo_add_input{
+.conteudo_add_input{
     width: 100%;
 }
 .conteudo_add_input svg{
@@ -586,7 +586,7 @@ main.open{
 
 @media (max-width:950px){
    .widget_item{
-    max-width: calc(50% - 30px);;
+    max-width: calc(50% - 30px) !important;
    } 
    .colunas_div.col3{
     display: none;
@@ -594,7 +594,7 @@ main.open{
 }
 @media (max-width:720px){
     .widget_item{
-     max-width: calc(100% - 30px);;
+     max-width: calc(100% - 30px) !important;
     } 
     .colunas_div.col2{
         display: none;
