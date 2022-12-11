@@ -454,6 +454,17 @@ main.open{
 .menuMobileMob.open{
     rotate: 180deg;
 }
+.slotvazio{
+    width: 100%;
+}
+.slotvazio h1{
+    margin-bottom: 5px !important;
+
+
+}
+.slotvazio h1, .slotvazio p, .slotvazio path{
+    color:var(--dark4)
+}
 
 @media (max-width:950px){
    .widget_item{
