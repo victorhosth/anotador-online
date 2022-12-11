@@ -1,4 +1,12 @@
-console.log('PRIMEIRA LINHA OK')
+//variaveis usadas
+let itemDaVez = 0
+let slotvazio = document.querySelector('.slotvazio')
+let itemDaVezDisplay = 0
+let widget = document.querySelectorAll('.widget_item')
+let widgetQtd = 12
+let mostrarItem = (widget)
+let qtdeItensTela = document.querySelector('.botao.qtd')
+let conteudoEditCoress = document.getElementsByClassName('conteudo_titulo_cores')
 
 //menu mobile desktop
 document.querySelector(".menuMobile").addEventListener("click", function(){
@@ -24,18 +32,112 @@ document.querySelector(".menuMobileMob").addEventListener("click", function(){
 
 
 })
+//definindo botão de settings e o modal que vai aparecer
+let botaoSettings = document.querySelector('.botao.edi')
+let modalSettings = document.querySelector('.settings')
+let botaoClosedSettings = document.querySelector('.container_settings h1 svg')
+let botaoClosedSave = document.querySelector('.settings_botao')
+
+//evento de click botão settings
+botaoSettings.addEventListener('click', function(){
+    modalSettings.classList.toggle('closed')
+})
+//botao closed settings
+botaoClosedSettings.addEventListener('click', function(){
+    modalSettings.classList.toggle('closed')
+})
+botaoClosedSave.addEventListener('click', function(){
+    modalSettings.classList.toggle('closed')
+})
 
 
-//variaveis usadas
 
-let itemDaVez = 0
-let slotvazio = document.querySelector('.slotvazio')
-let itemDaVezDisplay = 0
-let widget = document.querySelectorAll('.widget_item')
-let widgetQtd = 12
-let mostrarItem = (widget)
-let qtdeItensTela = document.querySelector('.botao.qtd')
-let conteudoEditCoress = document.getElementsByClassName('conteudo_titulo_cores')
+//settings botões de coluna:
+let coluna1 = document.querySelector('.colunas_div.col1')
+let coluna2 = document.querySelector('.colunas_div.col2')
+let coluna3 = document.querySelector('.colunas_div.col3')
+
+//definindo botões themas whire and dark
+let botaoThemaWhite = document.querySelector('.thema_white')
+let botaoThemaDark = document.querySelector('.thema_dark')
+
+//click botao WHITE
+botaoThemaWhite.addEventListener('click', function(){
+let htmlSite = document.querySelector('html')
+if( htmlSite.classList.contains('white_mode')){
+
+}else{
+    coluna1.children[0].classList.toggle('none')
+    coluna1.children[1].classList.toggle('none')
+    coluna2.children[0].classList.toggle('none')
+    coluna2.children[1].classList.toggle('none')
+    coluna3.children[0].classList.toggle('none')
+    coluna3.children[1].classList.toggle('none')
+
+    botaoThemaDark.classList.toggle('selected')
+    botaoThemaWhite.classList.toggle('selected')
+    htmlSite.classList.toggle('white_mode')
+}
+
+//click botao dark
+})
+botaoThemaDark.addEventListener('click', function(){
+    let htmlSite = document.querySelector('html')
+
+    if( htmlSite.classList.contains('white_mode')){
+        coluna1.children[0].classList.toggle('none')
+        coluna1.children[1].classList.toggle('none')
+        coluna2.children[0].classList.toggle('none')
+        coluna2.children[1].classList.toggle('none')
+        coluna3.children[0].classList.toggle('none')
+        coluna3.children[1].classList.toggle('none')
+        botaoThemaDark.classList.toggle('selected')
+        botaoThemaWhite.classList.toggle('selected')
+        htmlSite.classList.remove('white_mode')
+    }else{
+       
+    }
+
+
+
+//fim transição de cores do tema
+})
+
+//botões alternados na settings coluna config
+coluna1.addEventListener('click', function(){
+    for(let x = 0 ; x <= widgetQtd; x++){
+    widget[x].classList.add('col1_selected')
+    widget[x].classList.remove('col2_selected')
+    widget[x].classList.remove('col3_selected')
+    }
+    coluna2.classList.remove('selected')
+    coluna3.classList.remove('selected')
+    coluna1.classList.add('selected')
+})
+coluna2.addEventListener('click', function(){
+    for(let x = 0 ; x <= widgetQtd; x++){
+    widget[x].classList.add('col2_selected')
+    widget[x].classList.remove('col1_selected')
+    widget[x].classList.remove('col3_selected')
+    }
+    coluna2.classList.add('selected')
+    coluna3.classList.remove('selected')
+    coluna1.classList.remove('selected')
+})
+coluna3.addEventListener('click', function(){
+    for(let x = 0 ; x <= widgetQtd; x++){
+    widget[x].classList.add('col3_selected')
+    widget[x].classList.remove('col1_selected')
+    widget[x].classList.remove('col2_selected')
+    }
+    coluna2.classList.remove('selected')
+    coluna3.classList.add('selected')
+    coluna1.classList.remove('selected')
+}); //fim denifição botões coluna
+
+
+
+
 
 //aqui adiciona um conteudo
 document.querySelector(".botao.add").addEventListener("click", function(){
@@ -106,9 +208,6 @@ for ( let x = 0 ; x < widgetQtd; x++ ){
             selecionarWidgetCores.classList.toggle('none')
 
              //fechar todos outros edits
-
-            
-           
          })
     
 }
