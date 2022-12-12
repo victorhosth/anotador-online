@@ -578,6 +578,11 @@ main.open{
 .settings_botao svg,
 .delete_botao svg{
     margin-left: 10px;
+    
+}
+.settings_botao path,
+.settings_botao h4{
+    color: #fff;
 }
 /* sdafsfds */
 
@@ -619,7 +624,7 @@ main.open{
     header.open{
         bottom: 25px;
         right: 13px;
-        height: 200px !important;
+        height: 150px !important;
         width: 44px;
         padding-bottom: 50px;
         border-top-left-radius: 500px;
@@ -634,7 +639,7 @@ main.open{
         width: 60px;
         bottom: 5px;
         right: 13px;
-        height: 200px !important;
+        height: 150px !important;
         width: 44px;
         padding-bottom: 50px;
         border-top-left-radius: 500px;
@@ -650,6 +655,9 @@ main.open{
     .menuMobileMob{
         display: flex !important;
     }
+    .menuMobileMob path{
+        color: #fff;
+    }
     .botao{
        background-color: transparent;
     }
@@ -664,9 +672,7 @@ main.open{
     .slotvazio svg{
         rotate: y 0deg;
     }
-    .menu_tools svg path{
-        color: #fff !important;
-    }
+
     .container_settings,
     .container_delete{
         width: calc(100vw - 30px);
