@@ -240,7 +240,8 @@ main{
     list-style-type: circle;
     font-size: 14px;
     font-weight: 300;
-    margin-left: 40px;
+    margin-left: 30px;
+    margin-right: 15px;
     
 }
 .item_conteudo li{
@@ -437,7 +438,9 @@ main.open{
 .item_edit input::placeholder{
     font-weight: 200;
 }
-
+.conteudo_titulo_cores{
+    width: 100%;
+}
 .conteudo_titulo_cores p{
     margin-top: 5px;
     margin-bottom: 15px;
@@ -495,11 +498,14 @@ main.open{
     rotate: y 180deg;
 }
 
-.settings.closed{
+.settings.closed,
+.delete.closed{
     display: none;
 }
 
-.settings{
+
+.settings,
+.delete{
     top: 0px;
     left: 0px;
     width: 100vw;
@@ -508,7 +514,8 @@ main.open{
     background-color: var(--dark1);
 }
 
-.container_settings{
+.container_settings,
+.container_delete{
     padding: 30px 20px;
     background-color: var(--dark3);
     width: 500px;
@@ -568,7 +575,8 @@ main.open{
     border-bottom: 5px solid var(--cor-destaque1);
     cursor: auto;
 }
-.settings_botao svg{
+.settings_botao svg,
+.delete_botao svg{
     margin-left: 10px;
 }
 /* sdafsfds */
@@ -659,11 +667,13 @@ main.open{
     .menu_tools svg path{
         color: #fff !important;
     }
-    .container_settings{
+    .container_settings,
+    .container_delete{
         width: calc(100vw - 30px);
         height: calc(100vh - 50px);
     }
-    .container_settings h1 svg {
+    .container_settings h1 svg,
+    .container_delete h1 svg{
         position: fixed;
         margin: 0px !important;
         top:40px;
@@ -674,10 +684,10 @@ main.open{
 
 
  .white_mode:root{
-    --dark1: #f5f5f7 !important;
-    --dark2: #e5e5e5 !important;
-    --dark3: #f1f1f1 !important;
+    --dark1: #d7d7d7 !important;
+    --dark2: #e6e6e6 !important;
+    --dark3: #ebebeb !important;
     --dark4: #c9c9c9 !important;
-    --text-1:#2c2c2c !important;
+    --text-1: #2c2c2c !important;
     --text-2: #2e2e2e !important;
 }

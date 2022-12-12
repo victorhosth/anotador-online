@@ -33,22 +33,22 @@ document.querySelector(".menuMobileMob").addEventListener("click", function(){
 
 })
 //definindo botão de settings e o modal que vai aparecer
-let botaoSettings = document.querySelector('.botao.edi')
-let modalSettings = document.querySelector('.settings')
-let botaoClosedSettings = document.querySelector('.container_settings h1 svg')
-let botaoClosedSave = document.querySelector('.settings_botao')
+let botaoSettings = document.querySelector('.botao.edi');
+let modalSettings = document.querySelector('.settings');
+let botaoClosedSettings = document.querySelector('.container_settings h1 svg');
+let botaoClosedSave = document.querySelector('.settings_botao');
 
 //evento de click botão settings
 botaoSettings.addEventListener('click', function(){
     modalSettings.classList.toggle('closed')
-})
+});
 //botao closed settings
 botaoClosedSettings.addEventListener('click', function(){
     modalSettings.classList.toggle('closed')
-})
+});
 botaoClosedSave.addEventListener('click', function(){
     modalSettings.classList.toggle('closed')
-})
+});
 
 
 
@@ -162,9 +162,8 @@ for ( let x = 0 ; x < delQtd; x++ ){
 
     del[x].addEventListener('click', function(){
             let widgets= document.getElementsByClassName('widget_item')
-            console.log(itemDaVezDisplay)
             while(itemDaVezDisplay <= 1){
-                console.log('validou é igual a 0')
+
                 slotvazio.classList.remove('none')
                 break;
             }
@@ -264,7 +263,6 @@ for ( let x = 0 ; x < widgetQtd; x++ ){
     //limpo o input
     inputTitulo.value = ""
     }
-
     })
     //adicionando conteúdo
     let inputConteudo = widget[x].children[2].children[0].children[0]
@@ -286,28 +284,21 @@ for ( let x = 0 ; x < widgetQtd; x++ ){
     })
     inputConteudo.addEventListener('keyup', function(a){
 
-        
         if (a.key == 'Enter'){
             if(inputConteudo.value == ''){
                 inputConteudo.classList.add('input_vazio')
             }else{
                 inputConteudo.classList.remove('input_vazio')
-
                 const newLi = document.createElement('li')
                 //insiro o valor do input no elemento
                 newLi.innerHTML = inputConteudo.value;
                 //adiciono a lista criado la em cima
                 ulConteudo.appendChild(newLi);
-    
                 //limpo o input
                 inputConteudo.value = ""
                 }     
             }  
-
     })
-
-
-
 }
    
         
